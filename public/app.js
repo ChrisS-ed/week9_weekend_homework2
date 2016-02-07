@@ -23,19 +23,19 @@ window.onload = function(){
     }
   }
 
-  // dropdown.onchange = function(){
-  //   var countryName = this.value;
-  //   var countryIndex = null;
+  dropdown.onchange = function(){
+    var countryName = this.value;
+    var countryIndex = null;
 
-  //   for(index in countryNameList){
-  //     var testCountryName = countryNameList[index];
-  //     if(testCountryName === countryName){
-  //       var countryIndex = index;
-  //       console.log(countryIndex);
-  //       displayCountry(countryIndex);
-  //     }
-  //   }
-  // }
+    for(index in countryNameList){
+      var testCountryName = countryNameList[index];
+      if(testCountryName === countryName){
+        var countryIndex = index;
+        console.log(countryIndex);
+        //displayCountry(countryIndex);
+      }
+    }
+  }
 
   // var displayCountry = function(index){
   //   var name = countriesData[index]['name'];
