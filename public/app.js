@@ -61,10 +61,10 @@ var displayCountry = function(index){
 
   console.log(name, capital, population);
 
-  //localStorage.setItem('Last country', index)
+  //localStorage.setItem('Last country', index);
 
   var countryData = document.createElement('countryData')
-  countryData.innerText = ('Country: ' + name + ' - Capital: ' + capital + ' - Population: ' + population)
+  countryData.innerText = ('Country: ' + name + ' - Capital: ' + capital + ' - Population: ' + population + String.fromCharCode(13));
 
-  section.appendChild(countryData)
+  section.appendChild(countryData);
 }
