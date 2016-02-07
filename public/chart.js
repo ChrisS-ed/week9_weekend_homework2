@@ -18,7 +18,7 @@ var chartType = function(newSeries) {
     },
 
     title: {
-      text: "<b>Pokemon types I've caught</b>"
+      text: "<b>Countries by population</b>"
     },
     series: newSeries
   });

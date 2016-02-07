@@ -18,6 +18,7 @@ window.onload = function(){
       };
       displayDropdown(countryNameList);
       //displayCountry(localStorage.getItem('Last country'));
+      displayPopulationChart();
     }
   }
 
@@ -67,27 +68,51 @@ var displayCountry = function(index){
   countryData.innerText = ('Country: ' + name + ' - Capital: ' + capital + ' - Population: ' + population + String.fromCharCode(13));
 
   section.appendChild(countryData);
+}
 
-  var newSeries = [{
-    name: "Pokemon owned",
-    data: [
-      {
-        name: "Fire",
-        y: 74,
-        color: "#ffac33"
-      },
-      {
-        name: "Water",
-        y: 25,
-        color: "#73b7ff",
-        sliced: true
-      },
-      {
-        name: "Grass",
-        y: 1,
-        color: "#00ba2f"
-      }
-    ]
+var displayPopulationChart = function() {
+  // var newSeries = [{
+  //   name: "Countries by population",
+  //   data: [
+  //     {
+  //       name: "Fire",
+  //       y: 74,
+  //       color: "#ffac33"
+  //     },
+  //     {
+  //       name: "Water",
+  //       y: 25,
+  //       color: "#73b7ff",
+  //       sliced: true
+  //     },
+  //     {
+  //       name: "Grass",
+  //       y: 1,
+  //       color: "#00ba2f"
+  //     }
+  //   ]
+  // }]
+  
+  var totalPopulation = 0;
+  for (var i = 0; i < countriesData.length; i++) {
+    totalPopulation += countriesData[i].population;
+  };
+  console.log(totalPopulation);
+
+  var newData = [];
+  var populationPercent = 0;
+  for (var i = 0; i < countriesData.length; i++) {
+    populationPercent = (countriesData[i].population/totalPopulation) * 100;
+    newData.push({name: countriesData[i].name, y: populationPercent});
+    console.log(newData[i].name);
+    console.log(newData[i].y);
+  };
+
+  newSeries = [{
+    name: "Countries by population",
+    data: newData
   }]
   chartType(newSeries);
+
 }
+
