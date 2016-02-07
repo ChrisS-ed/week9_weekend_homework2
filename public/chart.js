@@ -1,4 +1,4 @@
-var chartType = function() {
+var chartType = function(newSeries) {
   var container = document.getElementById("chartPlace");
   var chart = new Highcharts.Chart({
     chart: {
@@ -20,27 +20,7 @@ var chartType = function() {
     title: {
       text: "<b>Pokemon types I've caught</b>"
     },
-    series: [{
-      name: "Pokemon owned",
-      data: [
-        {
-          name: "Fire",
-          y: 74,
-          color: "#ffac33"
-        },
-        {
-          name: "Water",
-          y: 25,
-          color: "#73b7ff",
-          sliced: true
-        },
-        {
-          name: "Grass",
-          y: 1,
-          color: "#00ba2f"
-        }
-      ]
-    }]
+    series: newSeries
   });
   // console.log(chart);
 }

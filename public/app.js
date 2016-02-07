@@ -68,5 +68,26 @@ var displayCountry = function(index){
 
   section.appendChild(countryData);
 
-  chartType();
+  var newSeries = [{
+    name: "Pokemon owned",
+    data: [
+      {
+        name: "Fire",
+        y: 74,
+        color: "#ffac33"
+      },
+      {
+        name: "Water",
+        y: 25,
+        color: "#73b7ff",
+        sliced: true
+      },
+      {
+        name: "Grass",
+        y: 1,
+        color: "#00ba2f"
+      }
+    ]
+  }]
+  chartType(newSeries);
 }
