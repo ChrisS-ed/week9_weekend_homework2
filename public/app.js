@@ -67,4 +67,6 @@ var displayCountry = function(index){
   countryData.innerText = ('Country: ' + name + ' - Capital: ' + capital + ' - Population: ' + population + String.fromCharCode(13));
 
   section.appendChild(countryData);
+
+  chartType();
 }

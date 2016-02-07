@@ -3,15 +3,27 @@
 <head>
 <title>Population charter</title>
   <link rel='stylesheet' type='text/css' href='main.css'>
+  <script src="http://code.highcharts.com/highcharts.js"></script>
+  <script src="chart.js"></script>
   <script src='app.js'></script>
 </head>
+
+<header>
+  <h1>Country Population Charter</h1>
+</header>
+
 <body>
   <h3>Choose a country:</h3>
+
   <select style="width: 280px" id="Countrylist" name="Countrylist">
     <option selected="">Please Select</option>
   </select>
+
   <section id = "info">
     <!-- Javascript goes here -->
   </section>
+
+  <div id="chartPlace"></div>
+
 </body>
 </html>
