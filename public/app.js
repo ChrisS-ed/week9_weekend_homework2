@@ -4,7 +4,6 @@ window.onload = function(){
   var request = new XMLHttpRequest();
   var countryNameList = [];
   var dropdown = document.getElementById('Countrylist')
-  var section = document.getElementById('info')
 
   request.open('GET', url);
   
@@ -17,7 +16,6 @@ window.onload = function(){
       for (var i = 0; i < countriesData.length; i++) {
         countryNameList.push(countriesData[i].name);
       };
-      console.log(countriesData);
       displayDropdown(countryNameList);
       //displayCountry(localStorage.getItem('Last country'));
     }
@@ -32,25 +30,12 @@ window.onload = function(){
       if(testCountryName === countryName){
         var countryIndex = index;
         console.log(countryIndex);
-        //displayCountry(countryIndex);
+        displayCountry(countryIndex);
       }
     }
   }
 
-  // var displayCountry = function(index){
-  //   var name = countriesData[index]['name'];
-  //   var capital = countriesData[index]['capital'];
-  //   var population = countriesData[index]['population'];
-
-  //   console.log(name, capital, population);
-
-  //   localStorage.setItem('Last country', index)
-
-  //   var blockquote = document.createElement('blockquote')
-  //   blockquote.innerText = ('Country: ' + name + ' - Capital: ' + capital + ' - Population: ' + population)
-
-  //   section.appendChild(blockquote)
-  // }
+  
 
   request.send(null);
 
@@ -65,4 +50,21 @@ var displayDropdown = function(countryNameList) {
     var select = document.querySelector("select");
     select.appendChild(option);
   };
+}
+
+var displayCountry = function(index){
+  var section = document.getElementById('info')
+
+  var name = countriesData[index]['name'];
+  var capital = countriesData[index]['capital'];
+  var population = countriesData[index]['population'];
+
+  console.log(name, capital, population);
+
+  //localStorage.setItem('Last country', index)
+
+  var countryData = document.createElement('countryData')
+  countryData.innerText = ('Country: ' + name + ' - Capital: ' + capital + ' - Population: ' + population)
+
+  section.appendChild(countryData)
 }
